@@ -1,0 +1,547 @@
+
+/*colors*/
+:root {
+    --white: whitesmoke;
+    /*new color scheme*/
+    --wave: #00a6ba;
+    /* color scheme 2*/
+    --main: #56a19b;
+    --mainshading: #24646d;
+    --c: #19321e;
+    --bgcolor: #07252e;
+    --shading: #def0ee;
+    --f: #c8f1f1;
+}
+/*importing fonts to use*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+/* Reset default margins and padding */
+* {
+    margin: 50;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+
+    
+    /*for waves*/
+    justify-content: flex-end;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    background: var(--bgcolor);
+}
+
+main { 
+    padding: 20px; 
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+}
+
+
+footer
+{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: var(--wave);
+    padding-bottom: 50px;
+}
+
+footer .wave
+{
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 100px;
+    background: url(images/wave.png);
+    background-size: 1000px 100px;
+}
+
+.wave {
+  filter: invert(30%) sepia(21%) saturate(801%) hue-rotate(95deg) brightness(100%) contrast(103%);
+}
+
+footer .wave#wave1 
+{
+    z-index: 1;
+    opacity: 1;
+    /*animate links to @keyframes specification in case of other animations
+    4s = time, shorter = faster
+    linear means = goes horizonally
+    infinite = doesn't stop*/
+    animation: animate 4s linear infinite;
+
+}
+
+/*wave3*/
+footer .wave#wave3
+{
+    z-index: 998;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animate 3.5s linear infinite;
+
+}
+
+footer .wave#wave2
+{
+    z-index: 998;
+    opacity: 0.5;
+    bottom: 15px;
+    animation: animate 2.8s linear infinite;
+
+}
+
+footer .wave#wave4
+{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 15px;
+    animation: animate 6s linear infinite;
+
+}
+
+/*moves wave from one side to the other & repeat*/
+@keyframes animate 
+{
+    0%
+    {
+        background-position: 1000px;
+    }
+    100%
+    {
+        background-position: 0;
+    }
+}
+
+
+#gallery{
+    margin-top: 230px;
+}
+
+/*bill page background gradient*/
+#billportal-page {
+    background: linear-gradient(to right, #beb85faf, #b2b446); 
+}
+
+
+/*crown icon bullet list*/
+.crownli {
+    list-style-position: inside !important;
+    /*list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.32 5.27-5.47 5.05-2.94-6.71a1 1 0 0 0-1.83 0l-2.94 6.71-5.46-5.05c-.72-.67-1.87 0-1.65.96l3 13a1 1 0 0 0 .97.78h14c.47 0 .87-.32.97-.78l3-13c.22-.96-.93-1.63-1.65-.96Z" fill="%23000"></path></svg>');
+    */
+    text-align: left !important;
+    font-size: 1.5rem !important;
+    text-shadow: none !important;
+}
+/*tooltips for ecc NPCs page*/
+.tooltip {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/*cpy paste secton*/
+.tooltip .tooltiptext{
+    visibility: hidden;
+    min-width: 350px;
+    width: auto;
+    max-width: 1000px;
+    background-color: var(--c);
+    text-align: center !important;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -1%;
+}
+  
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -.5%;
+    border-width: .5%px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+/* Header Styles */
+h1 {
+    font-size: xx-large;
+    margin-top: 20px;
+}
+/*centers content*/
+h2 {
+    text-align: center;
+}
+/*text stylig*/
+p {
+    font-size: 1.2rem;
+}
+/*mass stylings*/
+nav ul li a, .dropdown-content, body, .dropdown-content a, button.home-button {
+    color: var(--shading);
+}
+
+nav, .dropdown-content {
+    background-color: var(--main);
+}
+
+nav ul li a:hover, .dropdown-content a:hover {
+    background-color: var(--mainshading);
+}
+/*shadow*/
+.dropdown-content, .dropdown-content a:hover, nav a:hover, 
+.image-grid img:hover, .container-left, .right-container-small,
+.button.home-button, sub:hover {
+    box-shadow: 0px 8px 16px 0px rgba(46, 46, 46, 0.4);
+    border-radius: 15px;
+}
+
+/*display flex*/
+nav ul, .centered-title, .subtitle, .centered-text,
+.image-grid-container, .container-wrapper,
+.container-main .container-long-image,
+.right-container-small, body{
+    display: flex;
+}
+
+/* Navigation Styles */
+/* Example of a fixed navigation bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 9999;
+}
+
+nav ul {
+    list-style: none;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+li:hover > ul {
+    display: block;
+}
+
+
+/* Dropdown Styles */
+.dropdown-content {
+    padding: 12px 16px;
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+.sub {
+    left: 110px;
+    top: 0;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+}
+@media screen and (max-width: 700px) {
+  .sub {
+    left: -50px;
+    top: opx;
+  }
+}
+/*shows character names*/
+.dropdown-content .dropdown:hover > .sub {
+  display: flex;          
+  flex-direction: column;  
+}
+
+
+/* Main Content Styles */
+main, .container-left, .right-container-small {
+    padding: 20px;
+}
+
+.container-wrapper {
+    /*top, right, bottom, left*/
+    margin: 20px 20px 0px 20px;
+}
+
+.container-middle {
+    height: auto;
+    width: auto;
+    /*top, right, bottom, left*/
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+
+}
+/*Checking max screen width to work for phone-type screens*/
+@media (max-width: 1000px) {
+  .container-middle, .container-long-image {
+    transition: 0.3s;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .item {
+    flex: 1 1 100%;
+  }
+}
+
+
+section {
+    margin-bottom: 20px;
+}
+
+/*content styles*/
+.centered-content {
+    margin: 10px 0;
+}
+
+/*page title stylings*/
+.centered-title, .subtitle, .centered-text {
+
+    justify-content: center;
+    text-align: center;
+    color: var(--shading);
+    /*applying a shadow all around text*/
+    text-shadow: 2px 2px 0 black;
+}
+
+.centered-title{
+    font-size: 60px;
+    padding-top: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .centered-title {
+    margin-top: 150px;
+  }
+}
+.subtitle{
+    font-size: 40px;
+    padding-top: 5px;
+}
+
+/*homepage image grid styling*/
+/* Centers the imagegrid container */ 
+.image-grid-container { 
+    justify-content: center; 
+    margin-bottom: 50px;
+} 
+/*container styles*/
+/*wrapper (big container)*/
+.container-wrapper {
+    flex-wrap: wrap; /*lets flex items wrap*/
+    padding: 20px;
+}
+
+/*used in "Bill" page*/
+.right-container-small {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*big container for embeded documents*/
+.container-main {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container-left {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+    top: auto; /* remove top when static */
+    left: auto;
+  }
+
+  .container-doc {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .container-main {
+    flex-direction: column;
+  }
+}
+
+
+/*container for text box next to documents*/
+.container-left {
+  position: absolute;
+  top: 170px; /* replaces margin-top */
+  padding: 20px;
+  border-radius: 8px;
+  margin-left: 6%;
+  width: 40%;
+  height: auto;
+  background-color: var(--mainshading);
+  flex: 1;
+}
+
+
+.container-long-image{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    /*ouline to test location of container when shifting
+    outline: 2px solid blue;*/
+    object-fit: contain;
+    align-content: center;
+    overflow: hidden;
+
+}
+.container-long-image img{
+    width: 100%;
+    height: 100%;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    opacity: 0.9;
+    margin: 10px;
+    align-self: center;
+    object-fit: contain;
+    object-fit: cover;
+
+}
+
+.art-page{
+    justify-content: center;
+}
+.centered-text img{
+    width: 200px!important;
+    height: 200px!important;
+}
+
+
+/* Image Grid Styles */ 
+.image-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; 
+    width: 100%; 
+    /*Adjust max-width to control the grid's maximum width */ 
+    max-width: 1200px; 
+}  
+.image-grid a { 
+    display: block; 
+} 
+.image-grid img, .container-wrapper img { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    transition: transform 0.3s; 
+} 
+.image-grid img:hover, .button.home-button:hover { 
+    transform: scale(1.05); 
+}
+
+/*button styles*/
+.linked-button {
+    text-decoration: none;
+    padding-top: 50px;
+    display: inline-block;
+    margin-left: -2%px;
+}
+
+button.home-button {
+    background-color: #756b33;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 500%;
+    height: 50px;
+    border-radius: 20px;
+    font-size: large;
+}
+
+/* embeded doc styles*/
+iframe {
+    width: 90%;
+    height: 1000px;
+    border: 0;
+    /*moves left container down a bit -220
+    lines the tops up abt right*/
+    margin-bottom: 5px;
+    margin-left: 50%;
+    margin-top: 100px;
+    padding-top: 100px;
+}
+
+/* links styling*/
+.link {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/*buttons on billportal page*/
+.random-button {
+    position: absolute;
+    /*increase padding to increase size*/
+    padding: 45px 60px;
+    background-color: #aaa;
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font: 40px;
+}
+
+/*different shapes for image editing*/
+.circle { 
+    border-radius: 50%; 
+} 
+.oval {
+    border-radius: 50%/25%;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
